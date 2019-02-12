@@ -1,13 +1,16 @@
 import React from 'react';
 import Count from './Count';
+import Friends from './Friends';
+import FriendAdder from './FriendAdder';
 
 
-export default class extends React.Component {
+class Container extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       counter: 0,
+      friends: [{ name: 'Tom' }, { name: 'Josh' }],
     };
   }
 
@@ -15,9 +18,12 @@ export default class extends React.Component {
     st => ({ counter: st.counter + 1 }),
   )
 
-
   decrement = () => this.setState(
     st => ({ counter: st.counter - 1 }),
+  )
+
+  addFriend = name => this.setState(
+    st => ({ friends: st.friends.concat({ name }) }),
   )
 
   render() {
@@ -28,7 +34,13 @@ export default class extends React.Component {
           increment={this.increment}
           decrement={this.decrement}
         />
+
+        <Friends friends={this.state.friends} />
+
+        <FriendAdder addFriend={this.addFriend} />
       </div>
     );
   }
 }
+
+export default Container;
