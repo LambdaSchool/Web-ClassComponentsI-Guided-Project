@@ -11,13 +11,23 @@ export default class extends React.Component {
     };
   }
 
-  increment = () => this.setState({ counter: 2 })
+  increment = () => this.setState(
+    st => ({ counter: st.counter + 1 }),
+  )
+
+
+  decrement = () => this.setState(
+    st => ({ counter: st.counter - 1 }),
+  )
 
   render() {
     return (
       <div>
-        <Count count={this.state.counter} />
-        <button onClick={this.increment}>Increment</button>
+        <Count
+          count={this.state.counter}
+          increment={this.increment}
+          decrement={this.decrement}
+        />
       </div>
     );
   }
