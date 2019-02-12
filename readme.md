@@ -6,6 +6,7 @@
   * Updating state with setState.
   * Passing state around via props.
   * Passing callbacks around (via props) that change state.
+  * Creating inputs in React.
 
 # Final App
   * Check the `solution` branch once the lecture is done.
