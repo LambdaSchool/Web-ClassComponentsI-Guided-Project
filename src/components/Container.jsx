@@ -1,43 +1,21 @@
 import React from 'react';
 import Count from './Count';
 import Friends from './Friends';
-import FriendAdder from './FriendAdder';
 
 
 class Container extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      counter: 0,
-      friends: [{ name: 'Tom' }, { name: 'Josh' }],
-    };
-  }
-
-  increment = () => this.setState(
-    st => ({ counter: st.counter + 1 }),
-  )
-
-  decrement = () => this.setState(
-    st => ({ counter: st.counter - 1 }),
-  )
-
-  addFriend = name => this.setState(
-    st => ({ friends: st.friends.concat({ name }) }),
-  )
-
   render() {
     return (
       <div className='container'>
         <Count
-          count={this.state.counter}
-          increment={this.increment}
-          decrement={this.decrement}
+          count={7}
+          increment={() => console.log('incrementing!')}
+          decrement={() => console.log('decrementing!')}
         />
 
-        <Friends friends={this.state.friends} />
-
-        <FriendAdder addFriend={this.addFriend} />
+        <Friends
+          friends={[{ name: 'Tom' }, { name: 'Luke' }]}
+        />
       </div>
     );
   }
