@@ -12,10 +12,10 @@
   * Updating state with setState.
   * Passing state around via props.
   * Passing callbacks around (via props) that change state.
-  * Creating inputs in React.
+  * Working with inputs in React.
 
 # Steps
-  * Find steps in `Container.jsx` file inside
+  * Find steps in `Container.jsx` file inside `src/components` folder.
 
 # Final App
   * Check the `solution` branch once the lecture is done.
