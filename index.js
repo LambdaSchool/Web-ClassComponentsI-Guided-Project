@@ -1,1 +1,1 @@
-import './src/MySite';
+import './src/App';

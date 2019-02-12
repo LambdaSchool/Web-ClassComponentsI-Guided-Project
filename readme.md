@@ -14,5 +14,8 @@
   * Passing callbacks around (via props) that change state.
   * Creating inputs in React.
 
+# Steps
+  * Find steps in `Container.jsx` file inside
+
 # Final App
   * Check the `solution` branch once the lecture is done.
