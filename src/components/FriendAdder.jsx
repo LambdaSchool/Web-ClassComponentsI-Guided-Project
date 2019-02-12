@@ -21,7 +21,7 @@ export default class FriendAdder extends React.Component {
   render() {
     return (
       <div className='sub-container'>
-        <h3>Type your new friends name:</h3>
+        <h3>Type your new friend's name:</h3>
 
         <input
           type="text"
