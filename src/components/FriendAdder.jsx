@@ -20,8 +20,8 @@ export default class FriendAdder extends React.Component {
 
   render() {
     return (
-      <>
-        <span>Type your new friends name:</span>
+      <div className='sub-container'>
+        <h3>Type your new friends name:</h3>
 
         <input
           type="text"
@@ -30,7 +30,7 @@ export default class FriendAdder extends React.Component {
         />
 
         <button onClick={this.addFriendAndEraseInput}>Add friend!</button>
-      </>
+      </div>
     );
   }
 }
