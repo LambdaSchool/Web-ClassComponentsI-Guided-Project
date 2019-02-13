@@ -26,7 +26,12 @@ export class FriendAdder extends React.Component {
     return (
       <div className='sub-container'>
         <h3>Add a friend!</h3>
-        name: <input type="text" value={this.state.inputValue} onChange={this.changeHandler} />
+        name:
+        <input
+          type="text"
+          value={this.state.inputValue}
+          onChange={this.changeHandler}
+        />
         <button onClick={this.onButtonClick}>Add Friend!</button>
       </div>
     );
