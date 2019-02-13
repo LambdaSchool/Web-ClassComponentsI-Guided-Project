@@ -40,6 +40,8 @@ class Container extends React.Component {
   }
 
   decrement() {
+    // We need to bind this method in the constructor.
+    // Use arrow function to avoid this
     this.setState(st => ({ counter: st.counter - 1 }));
   }
 
