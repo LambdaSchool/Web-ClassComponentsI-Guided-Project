@@ -14,26 +14,32 @@ import Friends from './Friends';
 // 10- Flesh out `FriendsAdder` with a text input and submit button.
 
 class Container extends React.Component {
-  // constructor(props) {
-  //   super(props);
+  constructor(props) {
+    super(props);
 
-  //   this.state = {
-  //     counter: props.initialCount,
-  //     friends: [{ name: 'Tom' }, { name: 'Luke' }],
-  //   };
-  // }
-
-  state = {
-    counter: 7,
-    friends: [{ name: 'Tom' }, { name: 'Luke' }],
+    this.state = {
+      counter: props.initialCount,
+      friends: [{ name: 'Tom' }, { name: 'Luke' }],
+    };
+    this.decrement = this.decrement.bind(this);
   }
+
+  // state = {
+  //   counter: 7,
+  //   friends: [{ name: 'Tom' }, { name: 'Luke' }],
+  // }
 
   increment = () => {
     // this.state.counter = this.state.counter + 1; // WRONG!!!
-    // this.setState({ counter: this.state + 1 }); // not good enough: we need "current state"
+    // this.setState({ counter: this.state + 1 }); // not good enough: we need "current state",
+    // and because React batches state update operations, `this.state` might not be the right thing
     this.setState(
       st => ({ counter: st.counter + 1 }),
     );
+  }
+
+  decrement() {
+    this.setState(st => ({ counter: st.counter - 1 }));
   }
 
   render() {
@@ -43,7 +49,7 @@ class Container extends React.Component {
         <Count
           count={counter}
           increment={this.increment}
-          decrement={() => console.log('decrementing!')}
+          decrement={this.decrement}
         />
 
         <Friends
