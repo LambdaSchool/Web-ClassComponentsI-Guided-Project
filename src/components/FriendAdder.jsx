@@ -55,6 +55,7 @@ export class FriendAdder extends React.Component {
           value={this.state.ageValue}
           onChange={this.onAgeChange}
         />
+
         <button onClick={this.onButtonClick}>Add Friend!</button>
       </div>
     );
