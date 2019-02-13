@@ -32,6 +32,7 @@ export class FriendAdder extends React.Component {
   onButtonClick = () => {
     // we don't want to do anything unless inputs are filled in
     if (this.state.nameValue.length && this.state.ageValue.length) {
+      // the parent container provides us via props with the ability to add friend
       this.props.addFriend(this.state.nameValue, this.state.ageValue);
       this.clearInputs();
     }
