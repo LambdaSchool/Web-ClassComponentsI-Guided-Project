@@ -28,7 +28,7 @@ export class FriendAdder extends React.Component {
     }
   }
 
-  onButtonClick = () => {
+  onFriendAdd = () => {
     // we don't want to do anything unless inputs are filled in
     if (this.state.nameValue.length && this.state.ageValue.length) {
       // the parent container provides us via props with the ability to add friend
@@ -56,7 +56,7 @@ export class FriendAdder extends React.Component {
           onChange={this.onAgeChange}
         />
 
-        <button onClick={this.onButtonClick}>Add Friend!</button>
+        <button onClick={this.onFriendAdd}>Add Friend!</button>
       </div>
     );
   }
