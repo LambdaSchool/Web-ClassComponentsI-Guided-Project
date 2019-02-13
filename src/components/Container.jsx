@@ -20,6 +20,7 @@ class Container extends React.Component {
     this.state = {
       counter: props.initialCount,
       friends: [{ name: 'Tom' }, { name: 'Luke' }],
+      someOtherSliceOfState: 0,
     };
     this.decrement = this.decrement.bind(this);
   }
@@ -34,8 +35,10 @@ class Container extends React.Component {
     // this.setState({ counter: this.state + 1 }); // not good enough: we need "current state",
     // and because React batches state update operations, `this.state` might not be the right thing
     this.setState(
-      st => ({ counter: st.counter + 1 }),
+      this.setState(st => ({ counter: st.counter + 1 })),
     );
+
+    // you can't count on updated this.state
   }
 
   decrement() {
@@ -44,6 +47,7 @@ class Container extends React.Component {
 
   render() {
     const { counter, friends } = this.state;
+
     return (
       <div className='container'>
         <Count
