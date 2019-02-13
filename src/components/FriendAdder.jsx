@@ -1,11 +1,20 @@
 import React from 'react';
 
 export default class FriendAdder extends React.Component {
+  state = {
+    inputValue: 'Something',
+  }
+
+  changeHandler = event => {
+    
+  }
+
   render() {
     return (
       <div className='sub-container'>
         <h3>Add a friend!</h3>
-        name: <input type="text" />
+        name: <input type="text" value={this.state.inputValue} onChange={this.changeHandler} />
+        <button onClick={() => console.log('adding friend!')}>Add Friend!</button>
       </div>
     );
   }
