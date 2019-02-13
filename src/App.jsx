@@ -4,4 +4,4 @@ import Container from './components/Container';
 import './App.less';
 
 
-ReactDOM.render(<Container />, document.querySelector('#target1'));
+ReactDOM.render(<Container initialCount={3} />, document.querySelector('#target1'));

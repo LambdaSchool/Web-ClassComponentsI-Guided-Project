@@ -18,7 +18,7 @@ class Container extends React.Component {
     super(props);
 
     this.state = {
-      counter: 0,
+      counter: props.initialCount,
       friends: [{ name: 'Tom' }, { name: 'Luke' }],
     };
   }
