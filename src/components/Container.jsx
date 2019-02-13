@@ -52,18 +52,16 @@ class Container extends React.Component {
   render() {
     // do not use setState in the render method!!!
 
-    const { counter, friends } = this.state;
-
     return (
       <div className='container'>
         <Count
-          count={counter}
+          count={this.state.counter}
           increment={this.increment}
           decrement={this.decrement}
         />
 
         <Friends
-          friends={friends}
+          friends={this.state.friends}
         />
 
         <FriendAdder addFriend={this.addFriend} />
