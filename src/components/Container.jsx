@@ -20,7 +20,6 @@ class Container extends React.Component {
     this.state = {
       counter: props.initialCount,
       friends: [{ name: 'Tom' }, { name: 'Luke' }],
-      someOtherSliceOfState: 0,
     };
     this.decrement = this.decrement.bind(this);
   }
