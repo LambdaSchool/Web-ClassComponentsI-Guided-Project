@@ -2,11 +2,13 @@ import React from 'react';
 
 export default class FriendAdder extends React.Component {
   state = {
-    inputValue: 'Something',
+    inputValue: '',
   }
 
   changeHandler = event => {
-    
+    this.setState({
+      inputValue: event.target.value,
+    });
   }
 
   render() {
