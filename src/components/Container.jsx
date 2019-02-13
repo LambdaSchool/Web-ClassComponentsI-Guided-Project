@@ -46,6 +46,8 @@ class Container extends React.Component {
   }
 
   render() {
+    // do not use setState in the render method!!!
+
     const { counter, friends } = this.state;
 
     return (
