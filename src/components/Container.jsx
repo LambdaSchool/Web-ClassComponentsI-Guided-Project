@@ -18,7 +18,7 @@ class Container extends React.Component {
     return (
       <div className='container'>
         <Count
-          count={7}
+          count={8}
           increment={() => console.log('incrementing!')}
           decrement={() => console.log('decrementing!')}
         />
