@@ -49,6 +49,7 @@ class Container extends React.Component {
   addFriend = (name, age) => {
     // we don't need to do `this.addFriend = this.addFriend.bind(this)`
     // in the constructor with the arrow function syntax.
+    // Do not use destructive array methods on st.friends!! (push, etc)
     this.setState(st => ({ friends: st.friends.concat({ name, age }) }));
   }
 
