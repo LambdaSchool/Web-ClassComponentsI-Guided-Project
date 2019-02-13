@@ -1,9 +1,13 @@
 import React from 'react';
 
 
-export default class FriendAdder extends React.Component {
+export class FriendAdder extends React.Component {
   state = {
     inputValue: '',
+  }
+
+  clearInput = () => {
+    this.setState({ inputValue: '' });
   }
 
   changeHandler = event => {
@@ -15,6 +19,7 @@ export default class FriendAdder extends React.Component {
   onButtonClick = () => {
     // how do we use this.props.addFriend ????
     this.props.addFriend(this.state.inputValue);
+    this.clearInput();
   }
 
   render() {
@@ -27,3 +32,5 @@ export default class FriendAdder extends React.Component {
     );
   }
 }
+
+export default FriendAdder;
