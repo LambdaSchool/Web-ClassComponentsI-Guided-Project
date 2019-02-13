@@ -14,17 +14,27 @@ import Friends from './Friends';
 // 10- Flesh out `FriendsAdder` with a text input and submit button.
 
 class Container extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      counter: 0,
+      friends: [{ name: 'Tom' }, { name: 'Luke' }],
+    };
+  }
+
   render() {
+    const { counter, friends } = this.state;
     return (
       <div className='container'>
         <Count
-          count={8}
+          count={counter}
           increment={() => console.log('incrementing!')}
           decrement={() => console.log('decrementing!')}
         />
 
         <Friends
-          friends={[{ name: 'Tom' }, { name: 'Luke' }]}
+          friends={friends}
         />
       </div>
     );

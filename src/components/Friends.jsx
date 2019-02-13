@@ -4,12 +4,12 @@ import React from 'react';
 // each friend being an object like so: { name: 'Peter' },
 // and renders a list of friends' names.
 // Wrap everything in a div with the class of 'sub-container' so styles will work.
-export default function Friends({ friends }) {
+export default function Friends(props) {
   return (
     <div className="sub-container">
       <h3>These are my friends:</h3>
       {
-        friends.map((friend, idx) => (
+        props.friends.map((friend, idx) => (
           <div key={idx}>{friend.name}</div>
         ))
       }
