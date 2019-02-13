@@ -18,7 +18,9 @@ export class FriendAdder extends React.Component {
 
   onButtonClick = () => {
     // how do we use this.props.addFriend ????
-    this.props.addFriend(this.state.inputValue);
+    if (this.state.inputValue.length) {
+      this.props.addFriend(this.state.inputValue);
+    }
     this.clearInput();
   }
 
