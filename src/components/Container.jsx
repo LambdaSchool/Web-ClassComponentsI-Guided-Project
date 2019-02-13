@@ -29,20 +29,20 @@ class Container extends React.Component {
   //   friends: [{ name: 'Tom' }, { name: 'Luke' }],
   // }
 
-  increment = () => {
+  increment = howMuch => {
     // this.state.counter = this.state.counter + 1; // WRONG!!!
     // this.setState({ counter: this.state + 1 }); // not good enough: we need "current state",
     // and because React batches state update operations, `this.state` might not be the right thing
-    this.setState(st => ({ counter: st.counter + 1 }));
+    this.setState(st => ({ counter: st.counter + howMuch }));
 
     // you can't count on updated this.state here!!!
     // Use second argument of setState to pass a callback
   }
 
-  decrement() {
+  decrement(howMuch) {
     // We need to bind this method in the constructor.
     // Use arrow function to avoid this
-    this.setState(st => ({ counter: st.counter - 1 }));
+    this.setState(st => ({ counter: st.counter - howMuch }));
   }
 
   render() {

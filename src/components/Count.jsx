@@ -8,8 +8,8 @@ export default function Count({ count, increment, decrement }) {
     <div className="sub-container">
       <h3>This is the Count: {count}</h3>
       <div>
-        <button onClick={increment}>Increment</button>
-        <button onClick={decrement}>Decrement</button>
+        <button onClick={() => increment(5)}>Increment</button>
+        <button onClick={() => decrement(3)}>Decrement</button>
       </div>
     </div>
   );
