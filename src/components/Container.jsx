@@ -35,7 +35,8 @@ class Container extends React.Component {
     // and because React batches state update operations, `this.state` might not be the right thing
     this.setState(st => ({ counter: st.counter + 1 }));
 
-    // you can't count on updated this.state
+    // you can't count on updated this.state here!!!
+    // Use second argument of setState to pass a callback
   }
 
   decrement() {
