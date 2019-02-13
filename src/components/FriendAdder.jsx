@@ -1,17 +1,16 @@
 import React from 'react';
 
 
+const initialState = {
+  nameValue: '',
+  ageValue: '',
+};
+
 export class FriendAdder extends React.Component {
-  state = {
-    nameValue: '',
-    ageValue: '',
-  }
+  state = initialState
 
   clearInputs = () => {
-    this.setState({
-      nameValue: '',
-      ageValue: '',
-    });
+    this.setState(initialState);
   }
 
   onNameChange = event => {
