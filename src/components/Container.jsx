@@ -28,13 +28,21 @@ class Container extends React.Component {
     friends: [{ name: 'Tom' }, { name: 'Luke' }],
   }
 
+  increment = () => {
+    // this.state.counter = this.state.counter + 1; // WRONG!!!
+    // this.setState({ counter: this.state + 1 }); // not good enough: we need "current state"
+    this.setState(
+      st => ({ counter: st.counter + 1 }),
+    );
+  }
+
   render() {
     const { counter, friends } = this.state;
     return (
       <div className='container'>
         <Count
           count={counter}
-          increment={() => console.log('incrementing!')}
+          increment={this.increment}
           decrement={() => console.log('decrementing!')}
         />
 
