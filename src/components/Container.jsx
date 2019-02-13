@@ -45,8 +45,8 @@ class Container extends React.Component {
     this.setState(st => ({ counter: st.counter - howMuch }));
   }
 
-  addFriend = friendName => {
-    this.setState(st => ({ friends: st.friends.concat({ name: friendName }) }));
+  addFriend = (name, age) => {
+    this.setState(st => ({ friends: st.friends.concat({ name, age }) }));
   }
 
   render() {

@@ -3,25 +3,38 @@ import React from 'react';
 
 export class FriendAdder extends React.Component {
   state = {
-    inputValue: '',
+    nameValue: '',
+    ageValue: '',
   }
 
-  clearInput = () => {
-    this.setState({ inputValue: '' });
-  }
-
-  changeHandler = event => {
+  clearInputs = () => {
     this.setState({
-      inputValue: event.target.value,
+      nameValue: '',
+      ageValue: '',
     });
   }
 
-  onButtonClick = () => {
-    // how do we use this.props.addFriend ????
-    if (this.state.inputValue.length) {
-      this.props.addFriend(this.state.inputValue);
+  onNameChange = event => {
+    this.setState({
+      nameValue: event.target.value,
+    });
+  }
+
+  onAgeChange = event => {
+    // only numers allowed! :)
+    if (Number(event.target.value)) {
+      this.setState({
+        ageValue: event.target.value,
+      });
     }
-    this.clearInput();
+  }
+
+  onButtonClick = () => {
+    // we don't want to do anything unless inputs are filled in
+    if (this.state.nameValue.length && this.state.ageValue.length) {
+      this.props.addFriend(this.state.nameValue, this.state.ageValue);
+      this.clearInputs();
+    }
   }
 
   render() {
@@ -31,8 +44,15 @@ export class FriendAdder extends React.Component {
         name:
         <input
           type="text"
-          value={this.state.inputValue}
-          onChange={this.changeHandler}
+          value={this.state.nameValue}
+          onChange={this.onNameChange}
+        />
+
+        age:
+        <input
+          type="text"
+          value={this.state.ageValue}
+          onChange={this.onAgeChange}
         />
         <button onClick={this.onButtonClick}>Add Friend!</button>
       </div>
