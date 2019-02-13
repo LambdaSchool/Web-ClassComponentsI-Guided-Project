@@ -45,6 +45,10 @@ class Container extends React.Component {
     this.setState(st => ({ counter: st.counter - howMuch }));
   }
 
+  addFriend = friendName => {
+    this.setState(st => ({ friends: st.friends.concat({ name: friendName }) }));
+  }
+
   render() {
     // do not use setState in the render method!!!
 
@@ -62,7 +66,7 @@ class Container extends React.Component {
           friends={friends}
         />
 
-        <FriendAdder />
+        <FriendAdder addFriend={this.addFriend} />
       </div>
     );
   }
