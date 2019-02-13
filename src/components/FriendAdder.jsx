@@ -41,6 +41,7 @@ export class FriendAdder extends React.Component {
     return (
       <div className='sub-container'>
         <h3>Add a friend!</h3>
+
         name:
         <input
           type="text"
