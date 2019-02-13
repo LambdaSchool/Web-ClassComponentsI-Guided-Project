@@ -1,7 +1,7 @@
 import React from 'react';
 import Count from './Count';
 import Friends from './Friends';
-
+import FriendAdder from './FriendAdder';
 // 1- Implement `Count` functional component.
 // 2- Implement `Friends` functional component.
 // 3- Refactor `Container` so it has a constructor.
@@ -61,6 +61,8 @@ class Container extends React.Component {
         <Friends
           friends={friends}
         />
+
+        <FriendAdder />
       </div>
     );
   }
