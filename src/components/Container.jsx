@@ -57,8 +57,8 @@ class Container extends React.Component {
     // do not use setState in the render method!!!
 
     return (
-      // The purpose of the container is to distribute state and callbacks
-      // via props, to the child components
+      // The purpose of the container is to distribute state and
+      // state-altering callbacks via props, to the child components
       <div className='container'>
         <Count
           count={this.state.counter}
