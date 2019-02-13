@@ -36,7 +36,8 @@ class Container extends React.Component {
     this.setState(st => ({ counter: st.counter + howMuch }));
 
     // you can't count on updated this.state here!!!
-    // Use second argument of setState to pass a callback
+    // Use second argument of setState to pass a callback if you need to
+    // do something depending on updated state, or use componentDidUpdate lifecycle hook
   }
 
   decrement(howMuch) {
