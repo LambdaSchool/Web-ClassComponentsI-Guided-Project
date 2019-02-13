@@ -49,12 +49,13 @@ class Container extends React.Component {
   addFriend = (name, age) => {
     // we don't need to do `this.addFriend = this.addFriend.bind(this)`
     // in the constructor with the arrow function syntax.
-    // Do not use destructive array methods on st.friends!! (push, etc)
+    // Do NOT use destructive array methods on st.friends!! (push, etc)
     this.setState(st => ({ friends: st.friends.concat({ name, age }) }));
   }
 
   render() {
-    // do not use setState in the render method!!!
+    // do NOT use setState in the render method!!!
+    // setState triggers a re-render...
 
     return (
       // The purpose of the container is to distribute state and
