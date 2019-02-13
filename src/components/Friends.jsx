@@ -10,7 +10,7 @@ export default function Friends(props) {
       <h3>These are my friends:</h3>
       {
         props.friends.map((friend, idx) => (
-          <div key={idx}>{friend.name}</div>
+          <div key={idx}>{friend.name} is {friend.age}</div>
         ))
       }
     </div>
